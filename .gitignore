@@ -1,0 +1,3 @@
+!.gitignore
+/protected/config/*
+/protected/runtime/*
