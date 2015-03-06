@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Мар 04 2015 г., 13:53
+-- Время создания: Мар 06 2015 г., 11:08
 -- Версия сервера: 5.6.20
 -- Версия PHP: 5.5.15
 
@@ -60,8 +60,8 @@ CREATE TABLE IF NOT EXISTS `yo_blocks` (
 --
 
 INSERT INTO `yo_blocks` (`id`, `name`, `body`, `status`) VALUES
-(1, 'О нас', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque posuere tellus, quis maximus orci dapibus vitae. Phasellus molestie ut orci vitae fringilla. Phasellus semper eros est, eget dapibus est feugiat nec. Praesent mattis urna massa,', '0'),
-(2, 'Контакты', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque posuere tellus, quis maximus orci dapibus vitae. Phasellus molestie ut orci vitae fringilla. Phasellus semper eros est, eget dapibus est feugiat nec. Praesent mattis urna massa,', '1');
+(1, 'О нас', 'YØ DEZEEN IS AN ARCHITECTUAL DESIGN STUDIØ WITH EXTENSIVE EXPERIENCE IN THE FIELD ØF INTERIØR DESIGN FØR PUBLIC AND RESIDENTISL BUIDINGS', '1'),
+(2, 'Контакты', 'CØNTACTS WILL BE HERE', '1');
 
 -- --------------------------------------------------------
 
@@ -78,14 +78,15 @@ CREATE TABLE IF NOT EXISTS `yo_projects` (
   `img` varchar(255) NOT NULL,
   `status` enum('0','1') NOT NULL DEFAULT '0',
   `best` enum('0','1') NOT NULL DEFAULT '0'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Дамп данных таблицы `yo_projects`
 --
 
 INSERT INTO `yo_projects` (`id`, `type`, `name`, `location`, `body`, `img`, `status`, `best`) VALUES
-(1, 2, 'Название ', 'Местоположение', 'Описание', '20150303_72_header.jpg', '1', '0');
+(1, 2, 'Название ', 'Местоположение', 'Описание', '20150306_36_1.jpg', '1', '0'),
+(2, 1, 'Название 2', 'Местоположение 2', 'Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание ', '20150306_202_2.jpg', '1', '1');
 
 -- --------------------------------------------------------
 
@@ -111,14 +112,16 @@ CREATE TABLE IF NOT EXISTS `yo_team` (
   `position` varchar(255) NOT NULL,
   `img` varchar(255) NOT NULL,
   `status` enum('0','1') NOT NULL DEFAULT '0'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Дамп данных таблицы `yo_team`
 --
 
 INSERT INTO `yo_team` (`id`, `name`, `position`, `img`, `status`) VALUES
-(1, 'Константин', 'Программист', '20150303_41_ga7Hr8pLLQo.jpg', '1');
+(1, 'Константин', 'Ведущий программист', '20150306_767_3.png', '1'),
+(2, 'Александр', 'Верстальщик', '20150306_211_2.png', '1'),
+(5, 'Марина', 'Куратор', '20150306_666_1.png', '1');
 
 --
 -- Indexes for dumped tables
@@ -172,7 +175,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `yo_projects`
 --
 ALTER TABLE `yo_projects`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `yo_projects_images`
 --
@@ -182,7 +185,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `yo_team`
 --
 ALTER TABLE `yo_team`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
