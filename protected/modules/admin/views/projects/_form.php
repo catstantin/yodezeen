@@ -111,3 +111,49 @@
             </div>
         </div>
 <?php $this->endWidget(); ?>
+
+<?php if(!$model->isNewRecord) {?>
+
+<div style="border:1px solid gray"></div>
+
+<h2>Изображения</h2>
+
+<div class="row">
+<?php
+foreach($model->getPhotosList($model->id) as $val) { ?>
+    <div class="col-md-3 fileupload-new thumbnail" style="text-align:center;">
+        <div class="row">
+        <img src="/uploads/projects/list/<?=$model->id?>/<?=$val?>" width="80%">
+        </div>
+        <a href="/admin/projects/delimg/?id=<?=$model->id?>&img=<?=$val?>" onclick="return confirmItemDelete();">Удалить</a>
+    </div>
+<?php } ?>
+</div>
+
+<h3>Добавить новое изображение</h3>
+
+<?php $form=$this->beginWidget('CActiveForm', array(
+    'id'=>'items-form',
+    'action' => Yii::app()->createUrl('/admin/projects/imglistadd'),  
+    'htmlOptions'=>array(
+        'class'=>'form-horizontal',
+        'enctype' => 'multipart/form-data',
+        'enableAjaxValidation'=>false,
+    ),  
+)); ?>      
+        <input type="hidden" name="id" value="<?=$model->id?>">
+        <div class="form-group">
+            <div class="col-md-10">
+                <?php echo CHtml::activeFileField($model, 'image'); ?>
+                <p><?php echo $form->error($model,'img',array('class'=>'text-danger')); ?></p>
+            </div>
+        </div>          
+        
+        <div class="form-group">
+            <div class="col-lg-12">
+               <button type="submit" class="btn btn-info"><?php echo ($model->isNewRecord ? 'Создать' : 'Добавить') ?></button>
+            </div>
+        </div>
+<?php $this->endWidget(); 
+}
+?>

@@ -11,11 +11,17 @@ class SiteController extends Controller
     		'status' => '1',
 		));	
 
+		$bestProjects = Projects::model()->findAllByAttributes(array(
+    		'status' => '1',
+    		'best' => '1',
+		));	
+
 		$this->render('index', 
 					   array(
 					   		'about'=>$about['body'],
 					   		'contacts'=>$contacts['body'],
 					   		'team'=>$team,
+					   		'bestProjects'=>$bestProjects,
 					   	)
 					  );		
 	}
@@ -55,6 +61,7 @@ class SiteController extends Controller
 		$i = 0;
 		foreach ($array as $item)
 		{
+			$forJson['data'][$i]['id'] = $item['id'];
 			$forJson['data'][$i]['previewImg'] = '/uploads/projects/'.$item['img'];
 			$forJson['data'][$i]['folioCaption'] = $item['name'];
 			$forJson['data'][$i]['location'] = $item['location'];

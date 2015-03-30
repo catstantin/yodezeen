@@ -29,6 +29,13 @@ return array(
 	        'auth' => 'user',
 	        'visible' => true,
 	    ),	    
+	    40 => array(
+	        'name' => 'Публикации',
+	        'icon' => 'list',
+	        'url' => 'publications',
+	        'auth' => 'user',
+	        'visible' => true,
+	    ),	 	    
 	)
 );
 ?>

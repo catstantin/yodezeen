@@ -5,7 +5,7 @@ class UrlManager extends CUrlManager
 	public function init()
 	{
 		// check DB page
-	   	$url = Yii::app()->request->pathInfo;
+	   	// $url = Yii::app()->request->pathInfo;
 		// $page = Yii::app()->db->createCommand()
 		//     ->select('id, parent, name, url, controller')
   //           ->from('{{pages}}')

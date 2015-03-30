@@ -16,16 +16,16 @@
    x="0px" y="0px" viewBox="0 0 902.8 440" style="enable-background:new 0 0 902.8 440;" xml:space="preserve">
 <style type="text/css">
   .st0{
-    fill:#6F6564;
-    cursor:pointer;
+    fill:#ffffff;
   }
   .st0.active{
+    fill:orange;
+    cursor:pointer;
+  }
+  .st0.active:hover{
     stroke:white;
   }
-  .st0:hover{
-    fill:#ffffff;
-    transition: all 0.3s 0s linear;
-  }
+
 </style>
 <circle class="st0" cx="209.6" cy="3.2" r="3.2"/>
 <circle class="st0" cx="219.5" cy="3.2" r="3.2"/>
@@ -469,7 +469,7 @@
 <circle class="st0" cx="603.9" cy="101.7" r="3.2"/>
 <circle class="st0" cx="613.7" cy="101.7" r="3.2"/>
 <circle class="st0" cx="623.6" cy="101.7" r="3.2"/>
-<circle class="st0" cx="633.5" cy="101.7" r="3.2"/>
+<circle class="st0 active" id="el5" cx="633.5" cy="101.7" r="3.2"/>
 <circle class="st0" cx="643.3" cy="101.7" r="3.2"/>
 <circle class="st0" cx="653.2" cy="101.7" r="3.2"/>
 <path class="st0" d="M663,104.9c1.8,0,3.2-1.4,3.2-3.2c0-1.8-1.4-3.2-3.2-3.2c-1.8,0-3.2,1.4-3.2,3.2
@@ -631,7 +631,7 @@
 <circle class="st0" cx="515.2" cy="131.3" r="3.2"/>
 <circle class="st0" cx="525" cy="131.3" r="3.2"/>
 <circle class="st0" cx="534.9" cy="131.3" r="3.2"/>
-<circle class="st0" cx="544.8" cy="131.3" r="3.2"/>
+<circle class="st0 active" id="el4" cx="544.8" cy="131.3" r="3.2"/>
 <circle class="st0" cx="554.6" cy="131.3" r="3.2"/>
 <circle class="st0" cx="564.5" cy="131.3" r="3.2"/>
 <circle class="st0" cx="574.3" cy="131.3" r="3.2"/>
@@ -786,7 +786,7 @@
 <circle class="st0" cx="229.4" cy="160.9" r="3.2"/>
 <circle class="st0" cx="239.2" cy="160.9" r="3.2"/>
 <circle class="st0" cx="249.1" cy="160.9" r="3.2"/>
-<circle class="st0" cx="258.9" cy="160.9" r="3.2"/>
+<circle class="st0 active" id="el1" cx="258.9" cy="160.9" r="3.2"/>
 <circle class="st0" cx="426.5" cy="160.9" r="3.2"/>
 <circle class="st0" cx="436.3" cy="160.9" r="3.2"/>
 <circle class="st0" cx="446.2" cy="160.9" r="3.2"/>
@@ -966,7 +966,7 @@
 <circle class="st0" cx="475.8" cy="200.3" r="3.2"/>
 <circle class="st0" cx="485.6" cy="200.3" r="3.2"/>
 <circle class="st0" cx="505.3" cy="200.3" r="3.2"/>
-<circle class="st0" cx="515.2" cy="200.3" r="3.2"/>
+<circle class="st0" id="el3" cx="515.2" cy="200.3" r="3.2"/>
 <circle class="st0" cx="525.1" cy="200.3" r="3.2"/>
 <circle class="st0" cx="534.9" cy="200.3" r="3.2"/>
 <path class="st0" d="M544.8,203.5c1.8,0,3.2-1.4,3.2-3.2c0-1.8-1.4-3.2-3.2-3.2c-1.8,0-3.2,1.4-3.2,3.2
@@ -994,7 +994,7 @@
 <circle class="st0" cx="150.5" cy="210.2" r="3.2"/>
 <circle class="st0" cx="160.4" cy="210.2" r="3.2"/>
 <circle class="st0" cx="170.2" cy="210.2" r="3.2"/>
-<circle class="st0" cx="219.5" cy="210.2" r="3.2"/>
+<circle class="st0 active" id="el2" cx="219.5" cy="210.2" r="3.2"/>
 <circle class="st0" cx="396.9" cy="210.2" r="3.2"/>
 <circle class="st0" cx="406.8" cy="210.2" r="3.2"/>
 <circle class="st0" cx="416.6" cy="210.2" r="3.2"/>
@@ -1011,7 +1011,7 @@
 <circle class="st0" cx="525.1" cy="210.2" r="3.2"/>
 <circle class="st0" cx="534.9" cy="210.2" r="3.2"/>
 <circle class="st0" cx="544.8" cy="210.2" r="3.2"/>
-<circle class="st0" cx="564.5" cy="210.2" r="3.2"/>
+<circle class="st0" id="el6" cx="564.5" cy="210.2" r="3.2"/>
 <circle class="st0" cx="574.3" cy="210.2" r="3.2"/>
 <circle class="st0" cx="584.2" cy="210.2" r="3.2"/>
 <circle class="st0" cx="594" cy="210.2" r="3.2"/>
@@ -1148,7 +1148,7 @@
 <circle class="st0" cx="682.7" cy="249.6" r="3.2"/>
 <circle class="st0" cx="692.6" cy="249.6" r="3.2"/>
 <circle class="st0" cx="732" cy="249.6" r="3.2"/>
-<circle class="st0" cx="219.5" cy="259.4" r="2.2"/>
+<circle class="st0 active" id="el7" cx="219.5" cy="259.4" r="2.2"/>
 <circle class="st0" cx="239.2" cy="259.4" r="3.2"/>
 <circle class="st0" cx="249.1" cy="259.4" r="3.2"/>
 <circle class="st0" cx="258.9" cy="259.4" r="3.2"/>
@@ -1428,4 +1428,5 @@
 <circle class="st0" cx="239.2" cy="427" r="2.9"/>
 <circle class="st0" cx="249.1" cy="427" r="2.8"/>
 <circle class="st0" cx="249.1" cy="436.9" r="3.2"/>
+
 </svg>

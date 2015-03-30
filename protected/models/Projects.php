@@ -132,6 +132,36 @@ class Projects extends CActiveRecord
     }
 
     /**
+     * create folder for list of photos 
+     */    
+    public function createFolder($projectId) {
+        if(!file_exists(Yii::app()->basePath . '/../uploads/' . strtolower(get_class($this)) . '/list/' . $projectId))
+            mkdir(Yii::app()->basePath . '/../uploads/' . strtolower(get_class($this)) . '/list/' . $projectId);
+
+        chmod(Yii::app()->basePath . '/../uploads/' . strtolower(get_class($this)) . '/list/' . $projectId, 0755);
+        return true;
+    }
+
+    /**
+     * get list of photos 
+     */    
+    public function getPhotosList($projectId) {
+        $this->createFolder($projectId);
+
+        $files = array();
+
+        $dir = Yii::app()->basePath . '/../uploads/' . strtolower(get_class($this)) . '/list/' . $projectId;
+        $dh  = opendir($dir);
+        while (false !== ($filename = readdir($dh))) {
+            if($filename != '.' && $filename != '..')
+                $files[] = $filename;
+        }        
+
+        return $files;
+    }
+
+
+    /**
      * validate Image on upload
      */    
     public function imageValidate($attribute, $params)

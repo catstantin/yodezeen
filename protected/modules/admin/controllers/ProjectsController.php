@@ -5,7 +5,6 @@
 * public function filters()
 * public function actionIndex();
 * public function actionCreate()
-* public function actionUpdate($id)
 * public function actionDelete($id)
 * public function actionOnoff()
 * protected function loadModel($id)
@@ -100,4 +99,26 @@ class ProjectsController extends AdminController
 		$this->render('edit', array('model'=>$model, 'size'=>$size));
 	}
 
+	public function actionImglistadd()
+	{
+		if(isset($_FILES[$this->modelName]['tmp_name'])) {
+			$target_path = Yii::getPathOfAlias('webroot').'/uploads/'.strtolower($this->modelName).'/list/'.$_POST['id'].'/';
+			$target_path_file = $target_path . $_FILES[$this->modelName]['name']['image']; 
+
+			move_uploaded_file($_FILES[$this->modelName]['tmp_name']['image'], $target_path_file);
+
+			$info = new SplFileInfo($target_path_file);
+			rename($target_path_file, $target_path.time().'.'.$info->getExtension());
+			// exit;
+		}
+		$this->redirect($_SERVER['HTTP_REFERER']);
+	}	
+
+
+	public function actionDelimg()
+	{
+		if(is_file(Yii::getPathOfAlias('webroot').'/uploads/'.strtolower($this->modelName).'/list/'.$_GET['id'].'/'.$_GET['img']))
+			unlink(Yii::getPathOfAlias('webroot').'/uploads/'.strtolower($this->modelName).'/list/'.$_GET['id'].'/'.$_GET['img']);
+		$this->redirect($_SERVER['HTTP_REFERER']);
+	}	
 }
